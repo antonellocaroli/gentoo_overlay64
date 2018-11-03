@@ -34,7 +34,7 @@ QA_PREBUILT="usr/bin/hqplayerd"
 
 #pkg_setup() {
 #	if use !systemd; then
-#		enewgroup hqplayerd 
+#		enewgroup hqplayerd
 #		enewuser hqplayerd -1 -1 "/dev/null" "hqplayerd,audio"
 #	fi
 #}
@@ -47,9 +47,8 @@ src_install() {
 	mv etc lib usr var "${D}" || die
 	rm "${D}usr/share/doc/hqplayerd/changelog.Debian.gz"
 	if use systemd; then
-		systemd_dounit "${S}"/lib/systemd/system/cloud-config.service
+		systemd_dounit "${FILESDIR}/${MY_PN}.service"
 	else
 		newinitd "${FILESDIR}/${MY_PN}.init.d" "${MY_PN}"
 	fi
 }
-
