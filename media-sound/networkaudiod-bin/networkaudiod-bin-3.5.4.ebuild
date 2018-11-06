@@ -51,3 +51,24 @@ src_install() {
 		newinitd "${FILESDIR}/${MY_PN}.init.d" "${MY_PN}"
 	fi
 }
+
+pkg_postinst() {
+	# Provide some post-installation tips.
+	elog ""
+	elog ""
+	elog ""
+  elog "NetworkAudiod can be started with the following command (OpenRC):"
+  elog "\t/etc/init.d/networkaudiod start"
+  elog "or (systemd):"
+  elog "\tsystemctl start networkaudiod"
+  elog ""
+  elog "NetworkAudiod can be automatically started on each boot"
+  elog "with the following command (OpenRC):"
+  elog "\trc-update add networkaudiod default"
+  elog "or (systemd):"
+  elog "\tsystemctl enable networkaudiod"
+  elog ""
+  elog ""
+	elog ""
+	elog ""
+}
