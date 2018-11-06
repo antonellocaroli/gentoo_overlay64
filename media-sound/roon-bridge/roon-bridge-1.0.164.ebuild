@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-inherit eutils unpacker user
+inherit eutils unpacker user systemd
 
 
 DESCRIPTION="music player"
@@ -25,7 +25,11 @@ QA_PREBUILT="usr/sbin/RoonBridge"
 
 src_install() {
   cp -r RoonBridge "${D}"
+  if use systemd; then
+  systemd_dounit "${FILESDIR}/roonbridge.service"
+  else
   newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
+  fi
 }
 
 pkg_postinst() {
