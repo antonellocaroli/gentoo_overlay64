@@ -14,6 +14,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="mirror bindist"
 
+IUSE="systemd"
+
 RDEPEND=">=media-libs/alsa-lib-1.0.27"
 
 DEPEND="${RDEPEND}"
