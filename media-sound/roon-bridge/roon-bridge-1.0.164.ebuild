@@ -36,11 +36,21 @@ src_install() {
 
 pkg_postinst() {
 	# Provide some post-installation tips.
-	elog""
-	elog""
-	elog""
-	elog "If you want start RoonBridge automatically on system boot:"
-	elog "  rc-update add roonbridge default"
-	elog""
-	elog""
+	elog ""
+	elog ""
+	elog ""
+  elog "RoonBridge can be started with the following command (OpenRC):"
+  elog "\t/etc/init.d/RoonBridge start"
+  elog "or (systemd):"
+  elog "\tsystemctl start RoonBridge"
+  elog ""
+  elog "RoonBridge can be automatically started on each boot"
+  elog "with the following command (OpenRC):"
+  elog "\trc-update add RoonBridge default"
+  elog "or (systemd):"
+  elog "\tsystemctl enable RoonBridge"
+  elog ""
+  elog ""
+	elog ""
+	elog ""
 }
