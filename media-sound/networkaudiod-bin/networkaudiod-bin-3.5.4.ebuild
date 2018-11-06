@@ -46,7 +46,7 @@ src_install() {
 	mv usr etc lib "${D}" || die
 	rm "${D}usr/share/doc/networkaudiod/changelog.Debian.gz"
 	if use systemd; then
-		systemd_dounit "${S}"/lib/systemd/system/cloud-config.service
+		systemd_dounit "${FILESDIR}/${MY_PN}.service"
 	else
 		newinitd "${FILESDIR}/${MY_PN}.init.d" "${MY_PN}"
 	fi
