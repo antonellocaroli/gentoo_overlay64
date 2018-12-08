@@ -21,6 +21,7 @@ depend() {
 
 start_pre() {
 	checkpath -q -d -o ${lmsuser}:${lmsuser} -m 0770 "${rundir}"
+	checkpath -q -d -o ${lmsuser}:${lmsuser} -m 0770 "${logdir}"
 }
 
 start() {
