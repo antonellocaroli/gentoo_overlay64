@@ -76,5 +76,7 @@ pkg_postinst() {
 	elog "\thqplayerd -s root gentooplayer"
 	elog ""
 	elog ""
+	elog "web interface:"
+	elog "\tip:8088"
 	elog ""
 	}
