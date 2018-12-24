@@ -62,8 +62,8 @@ src_install()
 	doins rtapp.conf
 
 	if use systemd; then
-		systemd_dounit "${FILESDIR}/${MY_PN}.service"
-		systemd_dounit "${FILESDIR}/${MY_PN}-timer"
+		systemd_dounit "${FILESDIR}/${PN}.service"
+		systemd_dounit "${FILESDIR}/${PN}-timer"
 	else
 		newconfd "${FILESDIR}/${PF}.conf.d" "${PN}-timer"
 		newinitd "${FILESDIR}/${PF}.init.d" "${PN}-timer"
