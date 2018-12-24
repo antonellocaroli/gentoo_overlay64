@@ -52,3 +52,23 @@ src_install() {
 		newinitd "${FILESDIR}/${MY_PN}.init.d" "${MY_PN}"
 	fi
 }
+
+pkg_postinst() {
+	# Provide some post-installation tips.
+	elog ""
+	elog ""
+	elog ""
+  elog "HQPlayer Embedded can be started with the following command (OpenRC):"
+  elog "\t/etc/init.d/hqplayerd start"
+  elog "or (systemd):"
+  elog "\tsystemctl start hqplayerd"
+  elog ""
+  elog "NetworkAudiod can be automatically started on each boot"
+  elog "with the following command (OpenRC):"
+  elog "\trc-update add hqplayerd default"
+  elog "or (systemd):"
+  elog "\tsystemctl enable hqplayerd"
+  elog ""
+  elog ""
+	elog ""
+}
