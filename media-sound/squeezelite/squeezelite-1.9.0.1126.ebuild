@@ -3,7 +3,7 @@
 
 EAPI=6
 
-inherit eutils user flag-o-matic git-r3
+inherit eutils user flag-o-matic git-r3 systemd
 
 DESCRIPTION="Lightweight headless squeezebox client emulator"
 HOMEPAGE="https://github.com/ralph-irving/squeezelite"
@@ -15,7 +15,7 @@ EGIT_COMMIT="a1dd79daccc5a53e34a4926603e1bb54ca0cd718"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="aac dsd ffmpeg flac mad mpg123 pulseaudio resample visexport vorbis lirc gpio"
+IUSE="aac dsd ffmpeg flac mad mpg123 pulseaudio resample visexport vorbis lirc gpio systemd"
 
 # ffmpeg provides alac and wma codecs
 DEPEND="media-libs/alsa-lib
@@ -116,7 +116,11 @@ src_install() {
 	dodoc LICENSE.txt
 
 	newconfd "${FILESDIR}/${PN}.conf.d" "${PN}"
+	if use systemd; then
+	systemd_dounit "${FILESDIR}/${PN}.service"
+	else
 	newinitd "${FILESDIR}/${PN}.init.d" "${PN}"
+ fi
 }
 
 pkg_postinst() {
