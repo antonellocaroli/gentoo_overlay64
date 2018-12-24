@@ -63,7 +63,7 @@ pkg_postinst() {
   elog "or (systemd):"
   elog "\tsystemctl start hqplayerd"
   elog ""
-  elog "NetworkAudiod can be automatically started on each boot"
+  elog "HQPlayer Embedded can be automatically started on each boot"
   elog "with the following command (OpenRC):"
   elog "\trc-update add hqplayerd default"
   elog "or (systemd):"
