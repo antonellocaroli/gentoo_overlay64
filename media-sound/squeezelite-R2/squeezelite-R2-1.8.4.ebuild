@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit eutils user flag-o-matic git-r3
+inherit eutils user flag-o-matic git-r3 systemd
 #inherit eutils user flag-o-matic
 
 DESCRIPTION="Small headless Squeezebox emulator. R2 version is designed to play server side decoded and oversampled pcm streams. "
@@ -15,7 +15,7 @@ SRC_URI="https://github.com/marcoc1712/${PN}/archive/v${PV}-(R2).tar.gz -> ${P}.
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="dsd resample visexport ffmpeg lirc"
+IUSE="dsd resample visexport ffmpeg lirc systemd"
 
 DEPEND="media-libs/alsa-lib
 		media-libs/flac
@@ -68,12 +68,12 @@ src_compile() {
 		append-cflags "-DVISEXPORT"
 		einfo "audio data export to jivelite support enabled"
 	fi
-	
+
 	if use lirc; then
 		append-cflags "-DIR"
 		einfo "infra-red support enabled via lirc"
 	fi
-	
+
 	# Build it
 	emake || die "emake failed"
 }
@@ -83,7 +83,11 @@ src_install() {
 	dodoc LICENSE.txt
 
 	newconfd "${FILESDIR}/${PN}.conf.d" "${PN}"
+	if use systemd; then
+	systemd_dounit "${FILESDIR}/${PN}.service"
+	else
 	newinitd "${FILESDIR}/${PN}.init.d" "${PN}"
+  fi
 }
 
 pkg_postinst() {
