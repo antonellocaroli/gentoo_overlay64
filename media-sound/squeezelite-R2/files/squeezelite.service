@@ -1,0 +1,18 @@
+[Unit]
+Description=Squeezelite Service
+# if your distro uses systemd-networkd you may want to add
+# systemd-networkd-wait-online.service
+Requires=network-online.target sound.target systemd-udev-settle.service
+After=network-online.target sound.target systemd-udev-settle.service
+
+[Service]
+User=squeezeliter
+Type=simple
+EnvironmentFile=/etc/conf.d/squeezelite-R2
+#ExecStart=/usr/bin/squeezelite $parameters
+ExecStart=/usr/bin/squeezelite-R2
+RestartSec=5
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
