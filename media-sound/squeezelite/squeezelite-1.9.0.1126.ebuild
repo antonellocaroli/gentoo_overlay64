@@ -124,8 +124,17 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "If you want start Squeezelite automatically on system boot:"
-	elog "  rc-update add squeezelite default"
+	elog "squeezelite can be started with the following command (OpenRC):"
+	elog "\t/etc/init.d/squeezelite start"
+	elog "or (systemd):"
+	elog "\tsystemctl start squeezelite"
+	elog ""
+	elog "squeezelite can be automatically started on each boot"
+	elog "with the following command (OpenRC):"
+	elog "\trc-update add squeezelite default"
+	elog "or (systemd):"
+	elog "\tsystemctl enable squeezelite"
+	elog ""
 	elog "Edit /etc/conf.d/squeezelite to customise -- in particular"
 	elog "you may want to set the audio device to be used."
 }
