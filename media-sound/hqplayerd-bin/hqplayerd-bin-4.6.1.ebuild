@@ -71,4 +71,10 @@ pkg_postinst() {
   elog ""
   elog ""
 	elog ""
-}
+	elog "Please change the password as soon as possible, either through the web interface,"
+	elog "or from command line using command:"
+	elog "\thqplayerd -s root gentooplayer"
+	elog ""
+	elog ""
+	elog ""
+	}
