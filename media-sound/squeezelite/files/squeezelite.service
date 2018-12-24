@@ -9,8 +9,7 @@ After=network-online.target sound.target systemd-udev-settle.service
 User=squeezelite
 Type=simple
 EnvironmentFile=/etc/conf.d/squeezelite
-#ExecStart=/usr/bin/squeezelite $parameters
-ExecStart=/usr/bin/squeezelite
+ExecStart=/usr/bin/squeezelite $SL_OPTS
 RestartSec=5
 Restart=on-failure
 
