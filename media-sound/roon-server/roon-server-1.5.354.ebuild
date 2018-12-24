@@ -28,7 +28,7 @@ QA_PREBUILT="usr/sbin/RoonServer"
 src_install() {
   cp -r RoonServer "${D}"
   if use systemd; then
-  systemd_dounit "${FILESDIR}/roonbridge.service"
+  systemd_dounit "${FILESDIR}/roonserver.service"
   else
   newinitd "${FILESDIR}/roonserver.init.d" "roonserver"
   fi
