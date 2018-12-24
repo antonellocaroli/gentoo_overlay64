@@ -8,9 +8,9 @@ inherit eutils user flag-o-matic git-r3 systemd
 #inherit eutils user flag-o-matic
 
 DESCRIPTION="Small headless Squeezebox emulator. R2 version is designed to play server side decoded and oversampled pcm streams. "
-HOMEPAGE="https://github.com/marcoc1712/squeezelite-R2-R2"
+HOMEPAGE="https://github.com/marcoc1712/squeezelite-R2"
 SRC_URI="https://github.com/marcoc1712/${PN}/archive/v${PV}-(R2).tar.gz -> ${P}.tar.gz"
-#SRC_URI="https://www.dropbox.com/s/sk5yhrziy59leg6/squeezelite-R2-R2-1.8.4-R2.tar.gz"
+#SRC_URI="https://www.dropbox.com/s/sk5yhrziy59leg6/squeezelite-R2-1.8.4-R2.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -33,8 +33,8 @@ RDEPEND="${DEPEND}
 
 pkg_setup() {
 	# Create the user and group if not already present
-	enewgroup squeezelite-R2r
-	enewuser squeezelite-R2r -1 -1 "/dev/null" audio
+	enewgroup squeezeliter
+	enewuser squeezeliter -1 -1 "/dev/null" audio
 }
 
 src_unpack() {
@@ -79,7 +79,7 @@ src_compile() {
 }
 
 src_install() {
-	dobin squeezelite-R2-R2
+	dobin squeezelite-R2
 	dodoc LICENSE.txt
 
 	newconfd "${FILESDIR}/${PN}.conf.d" "${PN}"
