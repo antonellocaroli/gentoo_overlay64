@@ -37,7 +37,7 @@ QA_PREBUILT="usr/sbin/RoonBridge"
 #}
 
 src_install() {
-  insinto "/opt/"
+  insinto "/opt/${PN}"
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
