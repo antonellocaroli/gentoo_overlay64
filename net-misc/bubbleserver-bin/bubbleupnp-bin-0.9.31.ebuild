@@ -3,11 +3,13 @@
 
 EAPI=7
 
+MY_PN=${PN/-bin/}
+
 DESCRIPTION="Stream content to Android devices over the Internet"
 HOMEPAGE="https://bubblesoftapps.com/bubbleupnpserver/"
 SRC_URI="https://bubblesoftapps.com/bubbleupnpserver/BubbleUPnPServer-distrib.zip -> ${P}.zip"
 
-MY_PN=${PN/-bin/}
+
 
 LICENSE="BubbleUPnP-Server"
 SLOT="0"
