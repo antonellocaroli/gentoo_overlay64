@@ -7,6 +7,8 @@ DESCRIPTION="Stream content to Android devices over the Internet"
 HOMEPAGE="https://bubblesoftapps.com/bubbleupnpserver/"
 SRC_URI="https://bubblesoftapps.com/bubbleupnpserver/BubbleUPnPServer-distrib.zip -> ${P}.zip"
 
+MY_PN=${PN/-bin/}
+
 LICENSE="BubbleUPnP-Server"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -21,11 +23,11 @@ BDEPEND=""
 S="${WORKDIR}"
 
 src_install() {
-	insinto "/opt/${PN}/"
+	insinto "/opt/${MY_PN}/"
 	doins BubbleUPnPServerLauncher.jar
 	doins bcprov-jdk16-146.jar
 	insopts -m755
 	doins launch.sh
 
-	newinitd "${FILESDIR}/${PN}.init.d" "${PN}"
+	newinitd "${FILESDIR}/${MY_PN}.init.d" "${MY_PN}"
 }
