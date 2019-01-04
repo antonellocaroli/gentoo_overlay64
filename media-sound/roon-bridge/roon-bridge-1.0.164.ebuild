@@ -27,18 +27,8 @@ S="${WORKDIR}"
 QA_PREBUILT="usr/sbin/RoonBridge"
 
 
-#src_install() {
-#  cp -r RoonBridge "${D}"
-#  if use systemd; then
-#  systemd_dounit "${FILESDIR}/roonbridge.service"
-#  else
-#  newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
-#  fi
-#}
-
 src_install() {
-  insinto "/opt/"
-  dodir RoonBridge
+  cp -r RoonBridge "${D}"
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
