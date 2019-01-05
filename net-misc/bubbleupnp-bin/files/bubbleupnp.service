@@ -1,0 +1,15 @@
+[Unit]
+Description=BubbleUPnP Server
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+User=root
+Type=simple
+Environment=DEFAULTFILE=/etc/default/bubbleupnp
+Restart=on-failure
+ExecStartPre=/opt/bubbleupnp/startService.sh
+ExecStart=/opt/bubbleupnp/launch.sh ${OPTS}
+
+[Install]
+WantedBy=multi-user.target
