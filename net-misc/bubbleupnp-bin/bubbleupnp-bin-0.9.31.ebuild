@@ -39,3 +39,24 @@ src_install() {
 	newinitd "${FILESDIR}/${MY_PN}.init.d" "${MY_PN}"
   fi
 }
+
+pkg_postinst() {
+	# Provide some post-installation tips.
+	elog ""
+	elog ""
+	elog ""
+  elog "BubbleUpnp can be started with the following command (OpenRC):"
+  elog "\t/etc/init.d/bibbleupnp start"
+  elog "or (systemd):"
+  elog "\tsystemctl start bubbleupnp"
+  elog ""
+  elog "BubbleUpnp can be automatically started on each boot"
+  elog "with the following command (OpenRC):"
+  elog "\trc-update add bubbleupnp default"
+  elog "or (systemd):"
+  elog "\tsystemctl enable bubbleupnp"
+  elog ""
+  elog ""
+	elog ""
+	elog ""
+}
