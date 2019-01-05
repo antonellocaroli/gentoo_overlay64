@@ -5,7 +5,7 @@ logfile="/var/log/roon.log"
 
 start_stop_daemon_args="--user $user"
 
-command="//RoonBridge/./start.sh"
+command="/opt/RoonBridge/start.sh"
 command_args="
 	-f $logfile
 "
@@ -22,4 +22,3 @@ depend() {
 start_pre() {
     checkpath --file --owner $user --mode 0644 $logfile
 }
-
