@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-inherit eutils unpacker user systemd
+inherit systemd
 
 
 DESCRIPTION="music player sever"
