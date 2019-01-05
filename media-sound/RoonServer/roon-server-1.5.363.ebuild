@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-inherit eutils unpacker user systemd
+inherit systemd
 
 
 DESCRIPTION="music player sever"
@@ -22,11 +22,11 @@ DEPEND="${RDEPEND}"
 
 
 S="${WORKDIR}"
-QA_PREBUILT="usr/sbin/RoonServer"
-
 
 src_install() {
-  cp -r RoonServer "${D}"
+  insinto "/opt/${PN}/"
+  insopts -m755
+  doins -r RoonServer/*
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonserver.service"
   else
