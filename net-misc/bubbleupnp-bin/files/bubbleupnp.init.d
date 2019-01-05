@@ -5,10 +5,10 @@
 
 description="BubbleUPnP Server Daemon"
 
-logfile="/var/log/bubbleserver-bin.log"
-command="/opt/bubbleserver-bin/launch.sh"
+logfile="/var/log/bubbleupnp.log"
+command="/opt/bubbleupnp/launch.sh"
 command_args="-nologfile -disableAutoUpdate"
-pidfile="/run/bubbleserver-bin.pid"
+pidfile="/run/bubbleupnp.pid"
 start_stop_daemon_args="--background --make-pidfile --stderr ${logfile}"
 
 depend() {
@@ -22,7 +22,7 @@ start_pre() {
 }
 
 stop() {
-    ebegin "Stopping bubbleserver-bin"
+    ebegin "Stopping bubbleupnp"
     start-stop-daemon --stop --exec $command\
     --retry 15 --pidfile $pidfile
     eend $?
