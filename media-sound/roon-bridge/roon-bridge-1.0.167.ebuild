@@ -66,7 +66,8 @@ MY_PN=RoonBridge
 
 src_install() {
   diropts "/opt/${PN}/"
-  dodir RoonBridge
+  dodir /opt/RoonBridge
+  dodir RoonBridge/Bridge
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
