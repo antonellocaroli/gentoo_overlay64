@@ -22,8 +22,6 @@ DEPEND="${RDEPEND}"
 
 
 S="${WORKDIR}"
-QA_PREBUILT="usr/sbin/RoonServer"
-
 
 src_install() {
   cp -r RoonServer "${D}"
