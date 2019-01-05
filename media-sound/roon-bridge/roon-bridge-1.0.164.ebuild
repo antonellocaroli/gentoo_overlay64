@@ -40,10 +40,10 @@ src_install() {
   diropts "/opt/RoonBridge"
   dodir RoonBridge/Bridge
   insinto "/opt/RoonBridge"
-  doins RoonBridgeVERSION
+  doins RoonBridge/VERSION
   insopts -m755
-  doins RoonBridgestart.sh
-  doins RoonBridgecheck.sh
+  doins RoonBrid/gestart.sh
+  doins RoonBrid/gecheck.sh
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
