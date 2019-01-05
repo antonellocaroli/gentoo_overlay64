@@ -56,7 +56,7 @@ src_install() {
   insopts -m755
   doins RoonBrid/gestart.sh
   doins RoonBrid/gecheck.sh
-  dodir RoonBridge/Bridge
+  cp -r RoonBridge/Bridge /opt/RoonBridge/
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
