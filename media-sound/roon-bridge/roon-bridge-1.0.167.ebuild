@@ -65,9 +65,8 @@ MY_PN=RoonBridge
 
 
 src_install() {
-  exeinto "/opt/${PN}/"
-  doexe RoonBridge
-  dosym "${ED%/}"/opt/"${PN}"/RoonBridge /opt/bin/RoonBridge
+  diropts "/opt/${PN}/"
+  dodir RoonBridge
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
