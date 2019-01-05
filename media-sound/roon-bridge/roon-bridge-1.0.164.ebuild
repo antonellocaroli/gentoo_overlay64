@@ -50,9 +50,9 @@ S="${WORKDIR}"
 #  fi
 #}
 
-src_prepare () {
-mkdir /opt/RoonBridge
-}
+#src_prepare () {
+#mkdir /opt/RoonBridge
+#}
 
 src_install() {
   dodir "${D}"/opt/${PN}/
