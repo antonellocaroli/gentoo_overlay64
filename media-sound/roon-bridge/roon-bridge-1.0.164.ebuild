@@ -50,12 +50,12 @@ S="${WORKDIR}"
 #  fi
 #}
 
-#src_prepare () {
-#mkdir /opt/RoonBridge
-#}
+src_prepare () {
+mkdir /opt/RoonBridge
+}
 
 src_install() {
-  cp -r RoonBridge "${D}"/opt/
+  cp -r RoonBridge "${D}"/opt/RoonBridge/
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
