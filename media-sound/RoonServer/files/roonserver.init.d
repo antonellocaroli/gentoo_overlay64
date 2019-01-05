@@ -5,7 +5,7 @@ logfile="/var/log/roonserver.log"
 
 start_stop_daemon_args="--user $user"
 
-command="//RoonServer/./start.sh"
+command="/opt/RoonServer/start.sh"
 command_args="
 	-f $logfile
 "
@@ -22,4 +22,3 @@ depend() {
 start_pre() {
     checkpath --file --owner $user --mode 0644 $logfile
 }
-
