@@ -52,7 +52,7 @@ QA_PREBUILT="usr/sbin/RoonBridge"
 #}
 
 src_install() {
-  mkdir /opt/RoonBridge
+  insinto "/opt/RoonBridge"
   dodir RoonBridge/Bridge /opt/RoonBridge
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
