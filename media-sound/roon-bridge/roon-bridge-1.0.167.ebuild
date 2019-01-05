@@ -40,8 +40,8 @@ src_install() {
   insinto "/opt/${PN}/"
   doins -r RoonBridge/*
   insopts -m755
-  doins start.sh
-  doins check.sh
+  doins RoonBridge/start.sh
+  doins RoonBridge/check.sh
 
   if use systemd; then
       systemd_dounit "${FILESDIR}/roonbridge.service"
