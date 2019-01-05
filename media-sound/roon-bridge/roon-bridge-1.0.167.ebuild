@@ -64,7 +64,7 @@ MY_PN=RoonBridge
 #}
 
 src_install() {
-  into "${D}opt/"
+  into /opt/
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
