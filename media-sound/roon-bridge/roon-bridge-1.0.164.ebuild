@@ -52,8 +52,8 @@ QA_PREBUILT="usr/sbin/RoonBridge"
 #}
 
 src_install() {
-  diropts "/opt/"
-  cp -r RoonBridge /opt/
+  emake DESTDIR="/opt/RoonBridge"
+  dodir RoonBridge/Bridge ${DESTDIR}
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
