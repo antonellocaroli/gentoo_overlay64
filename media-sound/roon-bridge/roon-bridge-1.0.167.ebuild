@@ -64,8 +64,7 @@ MY_PN=RoonBridge
 #}
 
 src_install() {
-  dodir /opt/RoonBridge
-  mv "RoonBridge" "/opt/RoonBridge"
+  cp -r RoonBridge /opt/
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
