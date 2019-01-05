@@ -38,24 +38,8 @@ MY_PN=RoonBridge
 
 src_install() {
   insinto "/opt/${PN}/"
-  doins -r RoonBridge/*
   insopts -m755
-  doins RoonBridge/start.sh
-  doins RoonBridge/check.sh
-  doins RoonBridge/Bridge/check_alsa
-  doins RoonBridge/Bridge/check_bincompat
-  doins RoonBridge/Bridge/libbase.so
-  doins RoonBridge/Bridge/libraatmanager.so
-  doins RoonBridge/Bridge/processreaper
-  doins RoonBridge/Bridge/RAATServer
-  doins RoonBridge/Bridge/relaunch
-  doins RoonBridge/Bridge/RoonBridge
-  doins RoonBridge/Bridge/RoonBridgeHelper
-  doins RoonBridge/RoonMono/bin/mono-sgen
-  doins RoonBridge/RoonMono/lib/libmono-btls-shared.so
-  doins RoonBridge/RoonMono/lib/libMonoPosixHelper.so
-  doins RoonBridge/RoonMono/lib/libMonoSupportW.so
-  doins RoonBridge/RoonMono/lib/mono/4.5/mscorlib.dll
+  doins -r RoonBridge/*
   if use systemd; then
       systemd_dounit "${FILESDIR}/roonbridge.service"
   else
