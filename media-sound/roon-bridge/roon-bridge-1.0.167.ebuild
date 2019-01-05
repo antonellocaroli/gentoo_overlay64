@@ -26,51 +26,15 @@ DEPEND="${RDEPEND}"
 S="${WORKDIR}"
 MY_PN=RoonBridge
 
-#src_install() {
-#  cp -r RoonBridge "${D}"
-#  if use systemd; then
-#  systemd_dounit "${FILESDIR}/roonbridge.service"
-#  else
-#  newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
-#  fi
-#}
-
-#src_install() {
-#  diropts "/opt/RoonBridge"
-#  dodir "RoonBridge/Bridge"
-#  insinto "/opt/RoonBridge"
-#  doins "RoonBridge/VERSION"
-#  insopts -m755
-#  doins "RoonBrid/gestart.sh"
-#  doins "RoonBrid/gecheck.sh"
-#  if use systemd; then
-#  systemd_dounit "${FILESDIR}/roonbridge.service"
-#  else
-#  newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
-#  fi
-#}
-
-#src_prepare () {
-#mkdir /opt/RoonBridge
-#}
-
-#src_install() {
-#  dodir RonnBridge "${D}/opt/"
-#  if use systemd; then
-#  systemd_dounit "${FILESDIR}/roonbridge.service"
-#  else
-#  newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
-#  fi
-#}
-
 src_install() {
-  cp -r RoonBridge "${D}/opt/"
+  cp -r RoonBridge "${D}"
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
   newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
   fi
 }
+
 
 
 pkg_postinst() {
