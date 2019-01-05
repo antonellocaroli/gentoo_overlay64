@@ -24,7 +24,6 @@ DEPEND="${RDEPEND}"
 
 
 S="${WORKDIR}"
-QA_PREBUILT="usr/sbin/RoonBridge"
 
 
 #src_install() {
