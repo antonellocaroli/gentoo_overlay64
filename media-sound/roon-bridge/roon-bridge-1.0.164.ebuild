@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-inherit eutils unpacker user systemd
+inherit systemd
 
 
 DESCRIPTION="music player"
@@ -54,8 +54,20 @@ MY_PN=RoonBridge
 #mkdir /opt/RoonBridge
 #}
 
+#src_install() {
+#  dodir RonnBridge "${D}/opt/"
+#  if use systemd; then
+#  systemd_dounit "${FILESDIR}/roonbridge.service"
+#  else
+#  newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
+#  fi
+#}
+
+
 src_install() {
-  dodir RonnBridge "${D}/opt/"
+  exeinto "/opt/${PN}/"
+  doexe RoonBridge
+  dosym "${ED%/}"/opt/"${PN}"/RoonBridge /opt/bin/RoonBridge
   if use systemd; then
   systemd_dounit "${FILESDIR}/roonbridge.service"
   else
