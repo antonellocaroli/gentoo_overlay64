@@ -30,9 +30,9 @@ src_install() {
 	insinto "/opt/${MY_PN}/"
 	doins BubbleUPnPServerLauncher.jar
 	doins bcprov-jdk16-146.jar
-	doins "${FILESDIR}/startService.sh"
 	insopts -m755
 	doins launch.sh
+	doins "${FILESDIR}/startService.sh"
 	if use systemd; then
 		systemd_dounit "${FILESDIR}/${MY_PN}.service"
 	else
