@@ -4,7 +4,7 @@
 
 EAPI=5
 KEYWORDS="~amd64 ~x86"
-SRC_URI="https://www.audio-linux.com/ftp/packages/rtapp.tar.gz"
+SRC_URI="https://www.dropbox.com/s/2f48u443a886s48/rtapp.tar.gz"
 
 inherit eutils user systemd
 
