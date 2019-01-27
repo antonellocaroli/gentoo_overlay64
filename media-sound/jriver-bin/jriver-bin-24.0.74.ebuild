@@ -52,5 +52,5 @@ src_unpack() {
 }
 
 src_install() {
-	mv etc lib usr "${D}" || die
+	mv etc usr "${D}" || die
 }
