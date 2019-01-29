@@ -18,7 +18,7 @@ SRC_URI="
 LICENSE="roonlabs"
 
 SLOT="0"
-KEYWORDS="~amd64 ~arm64 ~arm"
+KEYWORDS="~amd64"
 RESTRICT="mirror bindist"
 
 IUSE="systemd"
