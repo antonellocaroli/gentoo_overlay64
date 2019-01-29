@@ -11,8 +11,8 @@ MY_PN=${PN/-bin/}
 DESCRIPTION="Network Audio Daemon"
 HOMEPAGE="http://www.signalyst.com/consumer.html"
 SRC_URI="
-	amd64? ( https://www.signalyst.eu/bins/naa/linux/xenial/${MY_PN}_${PV}-39_amd64.deb )
-	x86?   ( https://www.signalyst.eu/bins/naa/linux/xenial/${MY_PN}_${PV}-39_i386.deb )
+	amd64? ( https://www.signalyst.eu/bins/naa/linux/stretch/${MY_PN}_${PV}-39_amd64.deb )
+	x86?   ( https://www.signalyst.eu/bins/naa/linux/stretch/${MY_PN}_${PV}-39_i386.deb )
 "
 
 LICENSE="Signalyst"
