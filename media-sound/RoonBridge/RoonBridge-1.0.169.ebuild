@@ -8,11 +8,7 @@ inherit systemd
 
 DESCRIPTION="music player"
 HOMEPAGE="https://roonlabs.com/index.html"
-SRC_URI="
-      amd64? ( http://download.roonlabs.com/builds/RoonBridge_linuxx64.tar.bz2 -> ${P}.tar.bz2 )
-      arm64? ( http://download.roonlabs.com/builds/RoonBridge_linuxarmv8.tar.bz2 -> ${P}.tar.bz2 )
-      arm?   ( http://download.roonlabs.com/builds/RoonBridge_linuxarmv7hf.tar.bz2 -> ${P}.tar.bz2 )
-"
+SRC_URI="http://download.roonlabs.com/builds/RoonBridge_linuxx64.tar.bz2 -> ${P}.tar.bz2"
 
 
 LICENSE="roonlabs"
