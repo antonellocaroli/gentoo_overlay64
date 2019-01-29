@@ -14,7 +14,7 @@ SRC_URI="http://download.roonlabs.com/builds/RoonBridge_linuxx64.tar.bz2 -> ${P}
 LICENSE="roonlabs"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64 ~arm"
 RESTRICT="mirror bindist"
 
 IUSE="systemd"
