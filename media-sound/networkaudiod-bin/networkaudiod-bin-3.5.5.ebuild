@@ -13,11 +13,13 @@ HOMEPAGE="http://www.signalyst.com/consumer.html"
 SRC_URI="
 	amd64? ( https://www.signalyst.eu/bins/naa/linux/stretch/${MY_PN}_${PV}-39_amd64.deb )
 	x86?   ( https://www.signalyst.eu/bins/naa/linux/stretch/${MY_PN}_${PV}-39_i386.deb )
+	arm64? ( https://www.signalyst.eu/bins/naa/linux/stretch/${MY_PN}_${PV}-39_arm64.deb )
+	arm?   ( https://www.signalyst.eu/bins/naa/linux/stretch/${MY_PN}_${PV}-40_armhf.deb )
 "
 
 LICENSE="Signalyst"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm64 ~arm"
 RESTRICT="mirror bindist"
 
 IUSE="systemd"
