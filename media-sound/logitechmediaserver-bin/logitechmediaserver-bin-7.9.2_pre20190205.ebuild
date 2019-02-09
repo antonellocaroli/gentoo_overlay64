@@ -7,16 +7,16 @@ inherit eutils user systemd
 
 MY_PN="${PN/-bin}"
 
-PERL_VER="5.26"
+PERL_VER="5.28"
 
 if [[ ${PV} == *_pre* ]] ; then
-	HASHID="f2089582f202bb4f96441ae79b3251007a7c6d62"
-	BUILDID="1548427341"
+	HASHID="080465146a2381be344ed60b94c86a4f7ee2d743"
+	BUILDID="1549383488"
 	MY_PV="${PV/_pre*}"
 	SRC_URI="http://downloads.slimdevices.com/nightly/7.9/sc/${HASHID}/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
 #	SRC_URI="https://www.dropbox.com/s/ghkkob0aw3nfyug/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
 	S="${WORKDIR}/${MY_PN}-${MY_PV}-${BUILDID}"
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~arm64"
 elif [[ ${PV} == "9999" ]] ; then
 	EGIT_BRANCH="public/7.9"
 	EGIT_REPO_URI="https://github.com/Logitech/slimserver.git"
@@ -25,7 +25,7 @@ elif [[ ${PV} == "9999" ]] ; then
 else
 	SRC_URI="http://downloads.slimdevices.com/LogitechMediaServer_v${PV}/${MY_PN}-${PV}.tgz"
 	S="${WORKDIR}/${MY_PN}-${PV}"
-	KEYWORDS="~amd64"
+	KEYWORDS="~amd64 ~arm64"
 fi
 
 DESCRIPTION="Logitech Media Server (streaming audio server)"
@@ -55,7 +55,9 @@ RDEPEND="
 
 QA_PREBUILT="
 	opt/logitechmediaserver/Bin/x86_64-linux/*
+	opt/logitechmediaserver/Bin/aarch64-linux/*
 	opt/logitechmediaserver/CPAN/arch/${PERL_VER}/x86_64-linux-thread-multi/*
+	opt/logitechmediaserver/CPAN/arch/${PERL_VER}/aarch64-linux-thread-multi/*
 "
 
 RUN_UID=logitechmediaserver
@@ -89,9 +91,9 @@ pkg_setup() {
 src_prepare() {
 	epatch "${FILESDIR}/${P}-uuid-gentoo.patch"
 	epatch "${FILESDIR}/${P}-client-playlists-gentoo.patch"
-	(cd CPAN/arch && rm -rf 5.10 5.12 5.14 5.16 5.18 5.20 5.22 5.24 5.8)
-	(cd CPAN/arch/${PERL_VER} && rm -rf arm-linux* i386-linux* aarch64-linux*)
-	(cd Bin && rm -rf arm*-linux i86pc-solaris* sparc-linux i386-linux powerpc-linux aarch64-linux x86_64-linux)
+	(cd CPAN/arch && rm -rf 5.10 5.12 5.14 5.16 5.18 5.20 5.22 5.24 5.26 5.8)
+	(cd CPAN/arch/${PERL_VER} && rm -rf arm-linux* i386-linux* x86_64*)
+	(cd Bin && rm -rf aarch64* arm*-linux i86pc-solaris* sparc-linux i386-linux powerpc-linux x86_64*)
 	eapply_user
 }
 
@@ -178,8 +180,8 @@ lms_starting_instr() {
 
 pkg_postinst() {
 	#remove bin
-        #rm /opt/logitechmediaserver/Bin/x86_64-linux/*
-        #rm /opt/logitechmediaserver/Bin/aarch64-linux/*
+        rm /opt/logitechmediaserver/Bin/x86_64-linux/*
+        rm /opt/logitechmediaserver/Bin/aarch64-linux/*
 
 	# Point user to database configuration step, if an old installation
 	# of SBS is found.
