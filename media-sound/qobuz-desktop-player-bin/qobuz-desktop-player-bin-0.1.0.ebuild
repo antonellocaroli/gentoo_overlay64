@@ -18,7 +18,8 @@ KEYWORDS="~amd64"
 RESTRICT="mirror bindist"
 
 RDEPEND=">=dev-libs/libappindicator-12.10.0-r301
-	>=x11-libs/libnotify-0.7.7-r1"
+	>=x11-libs/libnotify-0.7.7-r1
+	>=gnome-base/gconf-3.2.6-r4"
 
 DEPEND="${RDEPEND}"
 
