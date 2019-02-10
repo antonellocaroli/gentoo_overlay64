@@ -20,7 +20,6 @@ RESTRICT="mirror bindist"
 IUSE="systemd"
 
 RDEPEND=">=dev-libs/glib-2.37.3
-	>=sys-libs/libuuid-1.0.3
 	>=media-libs/alsa-lib-1.0.28
 	>=x11-libs/libX11-1.6.7
 	>=x11-libs/libXext-1.3.3
