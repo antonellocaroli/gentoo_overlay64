@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit
+inherit unpacker
 
 MY_PN=${PN/-bin/}
 
