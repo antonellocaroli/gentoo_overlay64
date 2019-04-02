@@ -10,9 +10,7 @@ MY_PN=${PN/-bin/}
 
 DESCRIPTION="Network AudUnified Remote Server for Linux. Easily the best way of controlling your PC from your smartphone."
 HOMEPAGE="https://www.unifiedremote.com"
-SRC_URI="
-	amd64? ( https://www.unifiedremote.com/download/linux-x64-deb )
-"
+SRC_URI="https://www.unifiedremote.com/download/linux-x64-deb -> ${P}.zip"
 
 LICENSE="unifiedremote"
 SLOT="0"
