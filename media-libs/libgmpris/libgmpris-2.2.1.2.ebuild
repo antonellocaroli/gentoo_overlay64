@@ -33,10 +33,18 @@ src_unpack() {
 	unpack_deb ${A}
 }
 
+#src_prepare () {
+#(cp usr/lib/x86_64-linux-gnu/libgmpris.so.0.0.0 usr/lib/)
+#(chmod +x usr/lib/libgmpris.so.0.0.0)
+#(rm -r usr/lib/x86_64-linux-gnu/)
+#eapply_user
+#}
+
 src_prepare () {
 (cp usr/lib/x86_64-linux-gnu/libgmpris.so.0.0.0 usr/lib/)
-(chmod +x usr/lib/libgmpris.so.0.0.0)
-(rm -r usr/lib/x86_64-linux-gnu/)
+(mv usr/lib/ usr/lib64/)
+(chmod +x usr/lib64/libgmpris.so.0.0.0)
+(rm -r usr/lib64/x86_64-linux-gnu/)
 eapply_user
 }
 
@@ -47,10 +55,16 @@ eapply_user
 #}
 
 
+#src_install() {
+#	mv usr "${D}" || die
+#	rm "${D}usr/share/doc/libgmpris/changelog.gz"
+#	dosym /usr/lib/libgmpris.so.0.0.0 /usr/lib/libgmpris.so.0
+#}
+
 src_install() {
-	mv usr "${D}" || die
-	rm "${D}usr/share/doc/libgmpris/changelog.gz"
-	dosym /usr/lib/libgmpris.so.0.0.0 /usr/lib/libgmpris.so.0
+        mv usr "${D}" || die
+        rm "${D}usr/share/doc/libgmpris/changelog.gz"
+        dosym /usr/lib64/libgmpris.so.0.0.0 /usr/lib64/libgmpris.so.0
 }
 
 #pkg_postinst() {
