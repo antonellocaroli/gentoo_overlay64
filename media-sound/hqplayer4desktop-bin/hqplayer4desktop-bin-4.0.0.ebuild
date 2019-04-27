@@ -24,7 +24,8 @@ RDEPEND=">=sys-devel/gcc-5.1.0[openmp]
 	>=dev-qt/qtgui-5.5.0
 	>=dev-qt/qtwidgets-5.5.0
 	>=dev-qt/qtnetwork-5.5.0
-	>=dev-qt/qtdeclarative-5.5.0"
+	>=dev-qt/qtdeclarative-5.5.0
+	>=net-libs/libmicrohttpd-0.9.62"
 
 DEPEND="${RDEPEND}"
 
