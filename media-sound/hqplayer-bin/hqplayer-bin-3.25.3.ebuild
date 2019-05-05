@@ -16,6 +16,7 @@ LICENSE="Signalyst"
 SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="mirror bindist"
+IUSE="manual"
 
 RDEPEND=">=sys-devel/gcc-5.1.0[openmp]
 	>=media-libs/alsa-lib-1.0.16
@@ -24,7 +25,8 @@ RDEPEND=">=sys-devel/gcc-5.1.0[openmp]
 	>=dev-qt/qtgui-5.5.0
 	>=dev-qt/qtwidgets-5.5.0
 	>=dev-qt/qtnetwork-5.5.0
-	>=dev-qt/qtdeclarative-5.5.0"
+	>=dev-qt/qtdeclarative-5.5.0
+	manual? ( app-text/evince )"
 
 DEPEND="${RDEPEND}"
 
@@ -37,4 +39,6 @@ src_unpack() {
 
 src_install() {
 	mv usr "${D}" || die
+	insinto "/usr/share/applications/"
+	doins "${FILESDIR}/hqplayer-manual.desktop"
 }
