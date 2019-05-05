@@ -16,6 +16,7 @@ LICENSE="Signalyst"
 SLOT="0"
 KEYWORDS="~amd64"
 RESTRICT="mirror bindist"
+IUSE="manual"
 
 RDEPEND=">=sys-devel/gcc-5.1.0[openmp]
 	>=media-libs/alsa-lib-1.0.16
@@ -39,4 +40,6 @@ src_unpack() {
 
 src_install() {
 	mv usr "${D}" || die
+	insinto "/usr/share/applications/"
+	doins "${FILESDIR}/hqplayer4desktop-manual.desktop"
 }
