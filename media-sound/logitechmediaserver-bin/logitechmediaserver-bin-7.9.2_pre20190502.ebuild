@@ -13,7 +13,7 @@ if [[ ${PV} == *_pre* ]] ; then
 	HASHID="5d11bc2a64a7a1948ed91a4019c72eb4540cf7cd"
 	BUILDID="1556796842"
 	MY_PV="${PV/_pre*}"
-	SRC_URI="downloads-origin.slimdevices.com/nightly/7.9/sc/${HASHID}/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
+	SRC_URI="http://downloads-origin.slimdevices.com/nightly/7.9/sc/${HASHID}/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
 #	SRC_URI="https://www.dropbox.com/s/ghkkob0aw3nfyug/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
 	S="${WORKDIR}/${MY_PN}-${MY_PV}-${BUILDID}"
 	KEYWORDS="~amd64 ~arm64"
