@@ -41,5 +41,6 @@ src_unpack() {
 
 src_install() {
 	mv usr "${D}" || die
-	cp "${FILESDIR}/hqplayer4desktop-manual.desktop" "/usr/share/applications/"
+	insinto "/usr/share/applications/"
+	doins "${FILESDIR}/hqplayer4desktop-manual.desktop"
 }
