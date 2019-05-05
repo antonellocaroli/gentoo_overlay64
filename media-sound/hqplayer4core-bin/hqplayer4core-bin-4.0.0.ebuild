@@ -41,5 +41,5 @@ src_unpack() {
 
 src_install() {
 	mv usr "${D}" || die
-	cp "${FILESDIR}/hqplayer4desktop-manual.desktop" "/usr/share/applications/hqplayer4desktop-manual.desktop"
+	cp "${FILESDIR}/hqplayer4desktop-manual.desktop" "/usr/share/applications/"
 }
