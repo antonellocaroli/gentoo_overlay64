@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=HQPlayer 4 Desktop Manual
+GenericName=Manual for the HQPlayer 4 Desktop
+Type=Application
+Exec=evince /usr/share/doc/hqplayer4desktop/HQPlayer4Desktop-manual.pdf.bz2
+Icon=hqplayer4desktop-manual
+Categories=Qt;AudioVideo;Audio;
