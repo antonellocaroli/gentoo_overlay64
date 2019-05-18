@@ -46,7 +46,7 @@ pkg_postinst() {
 	elog ""
 	elog ""
   elog "BubbleUpnp can be started with the following command (OpenRC):"
-  elog "\t/etc/init.d/bibbleupnp start"
+  elog "\t/etc/init.d/bubbleupnp start"
   elog "or (systemd):"
   elog "\tsystemctl start bubbleupnp"
   elog ""
