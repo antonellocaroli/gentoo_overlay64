@@ -7,7 +7,7 @@ inherit eutils user systemd
 
 MY_PN="${PN/-bin}"
 
-PERL_VER="5.26"
+PERL_VER="5.28"
 
 if [[ ${PV} == *_pre* ]] ; then
 	HASHID="48a5fdc8cbe1050a72ddc073cefd6023267d7936"
@@ -111,7 +111,7 @@ src_prepare() {
 	epatch "${FILESDIR}/${P}-uuid-gentoo.patch"
 	epatch "${FILESDIR}/${P}-client-playlists-gentoo.patch"
 	(cd CPAN && rm -rf Image)
-	(cd CPAN/arch && rm -rf 5.10 5.12 5.14 5.16 5.18 5.20 5.22 5.24 5.28 5.8)
+	(cd CPAN/arch && rm -rf 5.10 5.12 5.14 5.16 5.18 5.20 5.22 5.24 5.26 5.8)
 	(cd CPAN/arch/${PERL_VER} && rm -rf aarch64* arm-linux* i386-linux* x86_64*)
 	(cd Bin && rm -rf aarch64* arm*-linux i86pc-solaris* sparc-linux i386-linux powerpc-linux x86_64*)
 	eapply_user
@@ -172,8 +172,8 @@ src_install() {
 	insinto /etc/logrotate.d
 	newins "${FILESDIR}/logitechmediaserver.logrotate.d" "${MY_PN}"
 	#symlink
-	dosym /usr/lib/perl5/vendor_perl/5.26.2/x86_64-linux-thread-multi /opt/logitechmediaserver/CPAN/arch/5.26/x86_64-linux-thread-multi
-	dosym /usr/lib/perl5/vendor_perl/5.26.2/x86_64-linux-thread-multi/Image /opt/logitechmediaserver/CPAN/Image
+	dosym /usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi /opt/logitechmediaserver/CPAN/arch/5.28/x86_64-linux-thread-multi
+	dosym /usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Image /opt/logitechmediaserver/CPAN/Image
 }
 
 lms_starting_instr() {
