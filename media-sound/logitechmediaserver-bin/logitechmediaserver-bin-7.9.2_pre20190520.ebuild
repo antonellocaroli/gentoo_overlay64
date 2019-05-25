@@ -10,8 +10,8 @@ MY_PN="${PN/-bin}"
 PERL_VER="5.28"
 
 if [[ ${PV} == *_pre* ]] ; then
-	HASHID="48a5fdc8cbe1050a72ddc073cefd6023267d7936"
-	BUILDID="1557613967"
+	HASHID="cb9d31360bd4eafd2536413a372ffb3e735c8758"
+	BUILDID="1558382969"
 	MY_PV="${PV/_pre*}"
 	SRC_URI="http://downloads-origin.slimdevices.com/nightly/7.9/sc/${HASHID}/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
 #	SRC_URI="https://www.dropbox.com/s/ghkkob0aw3nfyug/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
