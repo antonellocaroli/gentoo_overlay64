@@ -173,8 +173,8 @@ src_install() {
 	newins "${FILESDIR}/logitechmediaserver.logrotate.d" "${MY_PN}"
 	#symlink
 	dodir /opt/logitechmediaserver/CPAN/arch/5.30
-	dosym /usr/lib/perl5/vendor_perl/5.30.0/x86_64-linux-thread-multi /opt/logitechmediaserver/CPAN/arch/5.30/x86_64-linux-thread-multi
-	dosym /usr/lib/perl5/vendor_perl/5.30.0/x86_64-linux-thread-multi/Image /opt/logitechmediaserver/CPAN/Image
+	dosym /usr/lib/perl5/vendor_perl/5.30.0/aarch64-linux-thread-multi /opt/logitechmediaserver/CPAN/arch/5.30/aarch64-linux-thread-multi
+	dosym /usr/lib/perl5/vendor_perl/5.30.0/aarch64-linux-thread-multi/Image /opt/logitechmediaserver/CPAN/Image
 }
 
 lms_starting_instr() {
