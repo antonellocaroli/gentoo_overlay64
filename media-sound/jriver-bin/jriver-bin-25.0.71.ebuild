@@ -10,7 +10,7 @@ MY_PN=${PN/-bin/}
 
 DESCRIPTION="Jriver Media Center - the most comprehensive and seamless software available for managing and playing your media"
 HOMEPAGE="https://jriver.com/index.html"
-SRC_URI="https://files.jriver.com/mediacenter/channels/v25/latest/MediaCenter-25.0.37-amd64.deb"
+SRC_URI="https://files.jriver.com/mediacenter/channels/v25/latest/MediaCenter-25.0.71-amd64.deb"
 
 LICENSE="Jriver,Inc."
 SLOT="0"

@@ -9,7 +9,7 @@ DESCRIPTION="Lightweight headless squeezebox client emulator"
 HOMEPAGE="https://github.com/ralph-irving/squeezelite"
 
 EGIT_REPO_URI="https://github.com/ralph-irving/squeezelite.git"
-EGIT_COMMIT="6cef0f33c888932efbdf3f5cd43ca9d6c2159937"
+EGIT_COMMIT="b265c78e583b2c45d6f3ae9d6168776c4da0347e"
 # see VERSION #def in squeezelite.h
 
 LICENSE="GPL-3"
