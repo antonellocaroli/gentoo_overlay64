@@ -1,7 +1,9 @@
 [Unit]
 Description=Network Audio Adapter daemon
 Requires=network-online.target sound.target systemd-udev-settle.service
-After=network-online.target sound.target systemd-udev-settle.service
+#After=network-online.target sound.target systemd-udev-settle.service
+After=sound.target
+
 
 [Service]
 Type=simple
