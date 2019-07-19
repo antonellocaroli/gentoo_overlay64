@@ -10,7 +10,7 @@ MY_PN=${PN/-bin/}
 
 DESCRIPTION="HQPlayer - upsampling multichannel audio player"
 HOMEPAGE="http://www.signalyst.com/consumer.html"
-SRC_URI="http://www.signalyst.com/bins/${MY_PN}_${PV}-5_amd64.deb"
+SRC_URI="http://www.signalyst.com/bins/${MY_PN}_${PV}-7_amd64.deb"
 
 LICENSE="Signalyst"
 SLOT="0"
