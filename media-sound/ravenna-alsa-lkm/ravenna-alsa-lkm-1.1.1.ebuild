@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-git-r3 inherit
+inherit git-r3 
 
 
 DESCRIPTION="music player"
