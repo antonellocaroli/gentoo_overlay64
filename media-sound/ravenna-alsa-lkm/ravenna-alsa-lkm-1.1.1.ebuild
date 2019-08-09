@@ -52,6 +52,7 @@ MY_PN=RoonBridge
 src_install() {
   insinto "/opt/${PN}/"
   insopts -m755
+  doins -r ravenna-alsa-lkm/*
 }
 
 
