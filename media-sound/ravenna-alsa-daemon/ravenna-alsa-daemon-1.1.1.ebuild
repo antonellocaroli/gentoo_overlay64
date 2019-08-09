@@ -8,7 +8,7 @@ inherit systemd
 
 DESCRIPTION="music player"
 HOMEPAGE="https://roonlabs.com/index.html"
-SRC_URI="https://bitbucket.org/MergingTechnologies/ravenna-alsa-lkm.git"
+EGIT_REPO_URI="https://bitbucket.org/MergingTechnologies/ravenna-alsa-lkm.git"
 
 
 LICENSE="roonlabs"
