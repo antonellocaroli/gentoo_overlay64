@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}"
 
 
 S="${WORKDIR}"
-MY_PN=RoonBridge
+MY_PN=ravenna-alsa-lkm
 
 #src_install() {
 #  cp -r RoonBridge "${D}"
