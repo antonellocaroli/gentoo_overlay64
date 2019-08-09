@@ -52,6 +52,11 @@ src_install() {
   insinto "/opt/${PN}/"
   insopts -m755
   doins -r ravenna-alsa-lkm-1.1.1/*
+  if use systemd; then
+      systemd_dounit "${FILESDIR}/ravenna-alsa-lkm.service"
+  else
+        newinitd "${FILESDIR}/ravenna-alsa-lkm.init.d" "ravenna-alsa-lkm"
+  fi
 }
 
 
