@@ -15,7 +15,6 @@ LICENSE="roonlabs"
 
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~arm"
-RESTRICT="mirror bindist"
 
 IUSE="systemd"
 
