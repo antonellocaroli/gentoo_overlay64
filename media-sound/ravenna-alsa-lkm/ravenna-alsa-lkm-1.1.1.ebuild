@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-inherit systemd
+inherit eutils git-r3 systemd
 
 
 DESCRIPTION="music player"
