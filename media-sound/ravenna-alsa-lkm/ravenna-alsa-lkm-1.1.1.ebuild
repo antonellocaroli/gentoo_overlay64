@@ -56,7 +56,7 @@ src_install() {
       systemd_dounit "${FILESDIR}/ravenna-alsa-lkm.service"
   else
         newinitd "${FILESDIR}/ravenna-alsa-lkm.init.d" "ravenna-alsa-lkm"
-        cp "${FILESDIR}/ravenna_start.sh" "/opt/ravenna-alsa-lkm/Butler/ravenna_start.shhh"
+       cp "${FILESDIR}/ravenna_start.sh" "/opt/ravenna-alsa-lkm/Butler/"
   fi
 }
 
