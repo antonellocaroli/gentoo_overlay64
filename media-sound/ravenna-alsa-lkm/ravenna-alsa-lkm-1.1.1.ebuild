@@ -51,6 +51,9 @@ MY_PN=ravenna-alsa-lkm
 src_install() {
   insinto "/opt/${PN}/"
   doins -r ravenna-alsa-lkm-1.1.1/*
+  insopts -m755
+  doins -r ravenna-alsa-lkm-1.1.1/Butler/Merging_RAVENNA_Daemon
+
   if use systemd; then
       systemd_dounit "${FILESDIR}/ravenna-alsa-lkm.service"
   else
