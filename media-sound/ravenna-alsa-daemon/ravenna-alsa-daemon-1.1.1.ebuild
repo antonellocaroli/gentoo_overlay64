@@ -37,15 +37,22 @@ MY_PN=RoonBridge
 #}
 
 
+#src_install() {
+#  insinto "/opt/${PN}/"
+#  insopts -m755
+#  doins -r ravenna-alsa-daemon/*
+#  if use systemd; then
+#      systemd_dounit "${FILESDIR}/roonbridge.service"
+#  else
+#      newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
+#  fi
+#}
+
+
 src_install() {
   insinto "/opt/${PN}/"
   insopts -m755
   doins -r ravenna-alsa-daemon/*
-  if use systemd; then
-      systemd_dounit "${FILESDIR}/roonbridge.service"
-  else
-      newinitd "${FILESDIR}/roonbridge.init.d" "roonbridge"
-  fi
 }
 
 
