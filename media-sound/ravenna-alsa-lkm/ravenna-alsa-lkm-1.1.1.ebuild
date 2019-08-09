@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-git-r3
+git-r3 eutils
 
 
 DESCRIPTION="music player"
