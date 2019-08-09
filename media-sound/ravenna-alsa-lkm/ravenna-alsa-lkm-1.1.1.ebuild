@@ -3,7 +3,7 @@
 # $Id$
 
 EAPI=6
-inherit git-r3 
+inherit git-r3
 
 
 DESCRIPTION="music player"
@@ -51,7 +51,7 @@ MY_PN=ravenna-alsa-lkm
 src_install() {
   insinto "/opt/${PN}/"
   insopts -m755
-  doins -r ravenna-alsa-lkm/*
+  doins -r ravenna-alsa-lkm-1.1.1/*
 }
 
 
