@@ -6,7 +6,7 @@ index b638e2d..7c27467 100644
  	if (!strstr(exclude_codecs, "aac")	&& (!include_codecs || (order_codecs = strstr(include_codecs, "aac"))))
  		sort_codecs((include_codecs ? order_codecs - include_codecs : i), register_faad());
  #endif
-+#ifndef SL_NO_FAAD
++#ifndef SL_NO_OGG
  	if (!strstr(exclude_codecs, "ogg")	&& (!include_codecs || (order_codecs = strstr(include_codecs, "ogg"))))
  		sort_codecs((include_codecs ? order_codecs - include_codecs : i), register_vorbis());
 +#endif
