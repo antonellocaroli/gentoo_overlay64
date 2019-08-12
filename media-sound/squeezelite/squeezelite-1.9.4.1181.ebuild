@@ -15,7 +15,7 @@ EGIT_COMMIT="5fd7c26fd1cf14fec8b450dfddda0174a8b86cb1"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm64 ~arm"
-IUSE="aac dsd ffmpeg flac mad mpg123 pulseaudio resample visexport vorbis lirc gpio systemd"
+IUSE="aac dsd ffmpeg flac mad mpg123 pulseaudio resample visexport vorbis lirc gpio systemd opus"
 
 # ffmpeg provides alac and wma codecs
 DEPEND="media-libs/alsa-lib
