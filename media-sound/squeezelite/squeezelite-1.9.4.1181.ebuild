@@ -105,6 +105,10 @@ src_compile() {
 		OPTS+=" -DNO_FAAD"
 		einfo "AAC support disabled; add 'aac' USE flag if you need it"
 	fi
+	if ! use opus; then
+		OPTS+=" -DOPUS"
+		einfo "Using an interim buffer where opus"
+	fi
 
 	# Build it
 	emake || die "emake failed"
