@@ -15,7 +15,7 @@ EGIT_COMMIT="f5030482fcbb797e3927aba37d94d57dfa1e72b4"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86 ~arm64 ~arm"
-IUSE="aac dsd ffmpeg flac mad mpg123 pulseaudio resample visexport vorbis lirc gpio systemd opus"
+IUSE="aac dsd ffmpeg flac mad mpg123 pulseaudio resample visexport vorbis lirc gpio systemd"
 
 # ffmpeg provides alac and wma codecs
 DEPEND="media-libs/alsa-lib
@@ -104,10 +104,6 @@ src_compile() {
 	if ! use aac; then
 		OPTS+=" -DNO_FAAD"
 		einfo "AAC support disabled; add 'aac' USE flag if you need it"
-	fi
-	if ! use opus; then
-		OPTS+=" -DOPUS"
-		einfo "Using an interim buffer where opus"
 	fi
 
 	# Build it
