@@ -1,4 +1,4 @@
-# Copyright 1999-2018 Gentoo Authors
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI="6"
@@ -7,9 +7,9 @@ KEYWORDS="~amd64"
 
 HOMEPAGE="https://www.kernel.org/pub/linux/kernel/projects/rt/"
 
-inherit eapi7-ver
+inherit versionator
 
-CKV="$(ver_cut 1-3)"
+CKV="$(get_version_component_range 1-3)"
 K_SECURITY_UNSUPPORTED="1"
 K_DEBLOB_AVAILABLE="1"
 RT_PATCHSET="${PV/*_p}"
@@ -37,7 +37,7 @@ src_prepare() {
 	# 627796
 	sed \
 		"s/default PREEMPT_NONE/default PREEMPT_RT_FULL/g" \
-		-i "${S}/kernel/Kconfig.preempt" || die "sed failed"
+		-i "${S}/kernel/Kconfig.preempt"
 }
 
 pkg_postinst() {
