@@ -13,7 +13,7 @@ case "${PV}" in
 		EGIT_PROJECT="${PN}.git"
 		;;
 	(*)
-		KEYWORDS="~amd64 ~x86"
+		KEYWORDS="~amd64 ~x86 ~arm64"
 		SRC_URI="https://www.kernel.org/pub/linux/utils/${PN}/${P}.tar.xz"
 		;;
 esac
