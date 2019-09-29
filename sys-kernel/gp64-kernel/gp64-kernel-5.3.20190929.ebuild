@@ -8,7 +8,7 @@ inherit eutils autotools
 DESCRIPTION="Binary GP64 kernel package"
 HOMEPAGE="https://github.com/antonellocaroli/gp64-kernel.git"
 
-SRC_URI="${HOMEPAGE}/releases/download/${PV}/bcm2711-kernel-bis-${PV}.tar.xz -> ${P}.tar.xz"
+SRC_URI="${HOMEPAGE}/releases/download/${PV}/gp64-kernel-${PV}.tar.xz -> ${P}.tar.xz"
 
 LICENSE="GPL-2 freedist"
 SLOT="0"
