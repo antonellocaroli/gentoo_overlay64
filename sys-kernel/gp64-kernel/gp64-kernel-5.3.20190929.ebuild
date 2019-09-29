@@ -6,7 +6,7 @@ EAPI="6"
 inherit eutils autotools
 
 DESCRIPTION="Binary GP64 kernel package"
-HOMEPAGE="https://github.com/antonellocaroli/gp64-kernel.git"
+HOMEPAGE="https://github.com/antonellocaroli/gp64-kernel"
 
 SRC_URI="${HOMEPAGE}/releases/download/${PV}/gp64-kernel-${PV}.tar.xz -> ${P}.tar.xz"
 
