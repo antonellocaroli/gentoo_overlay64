@@ -5,7 +5,7 @@ EAPI="6"
 
 inherit eutils autotools
 
-DESCRIPTION="Binary RPi4 64-bit kernel package (bcm2711_defconfig + tweaks)"
+DESCRIPTION="Binary GP64 kernel package"
 HOMEPAGE="https://github.com/antonellocaroli/gp64-kernel.git"
 
 SRC_URI="${HOMEPAGE}/releases/download/${PV}/bcm2711-kernel-bis-${PV}.tar.xz -> ${P}.tar.xz"
