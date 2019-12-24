@@ -7,11 +7,11 @@ inherit eutils user systemd
 
 MY_PN="${PN/-bin}"
 
-PERL_VER="5.28"
+PERL_VER="5.30"
 
 if [[ ${PV} == *_pre* ]] ; then
-	HASHID="0116432ea65227ec1453cb70cf0226019f325d29"
-	BUILDID="1576322676"
+	HASHID="72652dba41c33115881035c585bbf59e4a1b075a"
+	BUILDID="1576909043"
 	MY_PV="${PV/_pre*}"
 	SRC_URI="http://downloads-origin.slimdevices.com/nightly/7.9/sc/${HASHID}/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
 #	SRC_URI="https://www.dropbox.com/s/ghkkob0aw3nfyug/${MY_PN}-${MY_PV}-${BUILDID}.tgz"
@@ -172,8 +172,8 @@ src_install() {
 	insinto /etc/logrotate.d
 	newins "${FILESDIR}/logitechmediaserver.logrotate.d" "${MY_PN}"
 	#symlink
-	dosym /usr/lib64/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi /opt/logitechmediaserver/CPAN/arch/5.28/x86_64-linux-thread-multi
-	dosym /usr/lib64/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Image /opt/logitechmediaserver/CPAN/Image
+	dosym /usr/lib64/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi /opt/logitechmediaserver/CPAN/arch/5.30/x86_64-linux-thread-multi
+	dosym /usr/lib64/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Image /opt/logitechmediaserver/CPAN/Image
 }
 
 lms_starting_instr() {
