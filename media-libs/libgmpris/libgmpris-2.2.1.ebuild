@@ -6,7 +6,7 @@ EAPI=6
 
 inherit unpacker user
 
-MY_PN=${PN/}
+MY_PN=${PN/-7}
 
 DESCRIPTION="libgmpris"
 HOMEPAGE="http://www.signalyst.com/consumer.html"
