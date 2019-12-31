@@ -6,7 +6,8 @@ inherit eutils systemd udev
 
 DESCRIPTION="Advanced Linux Sound Architecture Utils (alsactl, alsamixer, etc.)"
 HOMEPAGE="http://www.alsa-project.org/"
-SRC_URI="mirror://alsaproject/utils/${P}.tar.bz2"
+#SRC_URI="mirror://alsaproject/utils/${P}.tar.bz2"
+SRC_URI="ftp://ftp.alsa-project.org/pub/utils/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0.9"
