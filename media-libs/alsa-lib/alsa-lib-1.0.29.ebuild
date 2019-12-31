@@ -10,7 +10,8 @@ inherit autotools eutils multilib multilib-minimal python-single-r1
 
 DESCRIPTION="Advanced Linux Sound Architecture Library"
 HOMEPAGE="http://www.alsa-project.org/"
-SRC_URI="mirror://alsaproject/lib/${P}.tar.bz2"
+#SRC_URI="mirror://alsaproject/lib/${P}.tar.bz2"
+SRC_URI="ftp://ftp.alsa-project.org/pub/lib/${P}.tar.bz2"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
