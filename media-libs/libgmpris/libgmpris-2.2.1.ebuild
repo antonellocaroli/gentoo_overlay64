@@ -6,13 +6,13 @@ EAPI=6
 
 inherit unpacker user
 
-MY_PN=${PN/-7}
+MY_PN=${PN/}
 
 DESCRIPTION="libgmpris"
 HOMEPAGE="http://www.signalyst.com/consumer.html"
 SRC_URI="
-	amd64? ( https://www.sonarnerd.net/src/buster/${MY_PN}_${PV}_amd64.deb )
-	arm64?   ( https://www.sonarnerd.net/src/buster/${MY_PN}_${PV}_arm64.deb )
+	amd64? ( https://www.sonarnerd.net/src/buster/${MY_PN}_${PV}-7_amd64.deb )
+	arm64?   ( https://www.sonarnerd.net/src/buster/${MY_PN}_${PV}-7_arm64.deb )
 "
 
 LICENSE="Signalyst"
