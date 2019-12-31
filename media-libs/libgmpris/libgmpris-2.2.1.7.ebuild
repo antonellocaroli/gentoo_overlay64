@@ -11,13 +11,13 @@ MY_PN=${PN/}
 DESCRIPTION="libgmpris"
 HOMEPAGE="http://www.signalyst.com/consumer.html"
 SRC_URI="
-	amd64? ( https://www.sonarnerd.net/src/stretch/${MY_PN}_${PV}_amd64.deb )
-	x86?   ( https://www.sonarnerd.net/src/stretch/${MY_PN}_${PV}_amd64.deb )
+	amd64? ( https://www.sonarnerd.net/src/buster/${MY_PN}_${PV}_amd64.deb )
+	arm64?   ( https://www.sonarnerd.net/src/buster/${MY_PN}_${PV}_arm64.deb )
 "
 
 LICENSE="Signalyst"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="mirror bindist"
 
 
