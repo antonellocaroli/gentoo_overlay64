@@ -11,15 +11,14 @@ MY_PN=${PN/-bin/}
 DESCRIPTION="Network Audio Daemon"
 HOMEPAGE="http://www.signalyst.com/consumer.html"
 SRC_URI="
-	amd64? ( https://www.signalyst.eu/bins/naa/linux/buster/${MY_PN}_${PV}-42_amd64.deb )
-	x86?   ( https://www.signalyst.eu/bins/naa/linux/buster/${MY_PN}_${PV}-42_i386.deb )
-	arm64? ( https://www.signalyst.eu/bins/naa/linux/buster/${MY_PN}_${PV}-42_arm64.deb )
-	arm?   ( https://www.signalyst.eu/bins/naa/linux/buster/${MY_PN}_${PV}-42_armhf.deb )
+	amd64? ( https://www.signalyst.eu/bins/naa/linux/buster/${MY_PN}_${PV}-43_amd64.deb )
+	arm64? ( https://www.signalyst.eu/bins/naa/linux/buster/${MY_PN}_${PV}-43_arm64.deb )
+	arm?   ( https://www.signalyst.eu/bins/naa/linux/buster/${MY_PN}_${PV}-43_armhf.deb )
 "
 
 LICENSE="Signalyst"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~arm64 ~arm"
+KEYWORDS="~amd64 ~arm64 ~arm"
 RESTRICT="mirror bindist"
 
 IUSE="systemd"
